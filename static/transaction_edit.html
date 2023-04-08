@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Transaction</title>
+</head>
+<body>
+<!-- header -->
+  <div>
+    <div>
+      $logo
+    </div>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="transactions.html">Transactions</a>
+      <a href="team.html">Team</a>
+    </nav>
+    <div>
+      <span>$Username</span>
+      <span>$profile picture</span>
+      <span><a href="login.html">Logout</a></span>
+    </div>
+  </div>
+<!-- pop-up window -->
+  <div>
+    <div>
+      <a href="transactions.html">$icon_back</a>
+      <h2>Add Transaction</h2>
+    </div>
+    <div>
+      <form action="transactions.html">
+        <div>
+          <label for="tr_title">Name</label>
+          <input type="text" name="title" id="tr_title" placeholder="$tr_name">
+        </div>
+        <div>
+          <label for="tr_category">Category</label>
+          <input type="text" name="category" id="tr_category" placeholder="$tr_category">
+        </div>
+        <div>
+          <label for="tr_date">Date</label>
+          <input type="text" name="date" id="tr_date" placeholder="$tr_date">
+        </div>
+        <div>
+          <label for="tr_value">Value</label>
+          <input type="text" name="value" id="tr_value" placeholder="$tr_value">
+          <span>Ft</span>
+        </div>
+        <a href="transactions.html"><span>$icon_trash</span> Delete</a>
+        <a href="transactions.html">Cancel</a>
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
