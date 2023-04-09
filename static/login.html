@@ -2,26 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
+    <link rel="stylesheet" href="style/custom.css">
 </head>
-<body>
-    <div>
-        <div><h2>Login</h2></div>
-        <div>
-            <form action="index.html">
-                <div>
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="email address">
-                </div>
-                <div>
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="***********">
-                </div>
-                <button type="submit">Login</button>
-            </form>
+<body class="singlePage">
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-sm navbar-light p-4 px-2">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/logo.png" alt="logo">
+            </a>
         </div>
-        <div>Don't have an account? <a href="signup.html">Sign up</a></div>
-        <a href="#">Forgot password?</a>
+    </nav>
+    <!-- backdrop -->
+    <svg class="backdrop" height="100vh" width="100vw">
+        <circle cx="10%" cy="50%" r="25%" fill="#EA9A8E" />
+        <circle cx="48%" cy="80%" r="30%" fill="#847BE4" />
+        <circle cx="80%" cy="10%" r="27%" fill="#FBBBB1" />
+        <circle cx="65%" cy="40%" r="15%" fill="#5145D0" />
+    </svg>
+    <!-- main content -->
+    <div class="pop-up col-6 col-lg-5 p-4">
+        <h2 class="mt-5">Login</h2>
+        <form action="index.html" class="w-50">
+            <div class="form-floating mb-3">
+                <input class="form-control w-100" type="email" name="email" id="email" placeholder="Enter email address" required>
+                <label class="form-label" for="email">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control w-100" type="password" name="password" id="password" placeholder="Enter password" required>
+                <label class="form-label" for="password">Password</label>
+            </div>
+            <button class="btn btn-primary text-white w-100 mt-5 shadow-sm" type="submit">Login</button>
+        </form>
+        <div class="text-center mt-3 mb-2">
+            <div>Don't have an account? <a class="link-secondary" href="signup.html">Sign up</a></div>
+            <a href="#">Forgot password?</a>
+        </div>
     </div>
 </body>
 </html>

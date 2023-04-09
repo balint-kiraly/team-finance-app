@@ -2,55 +2,111 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Edit Transaction</title>
+  <link rel="stylesheet" href="style/custom.css">
 </head>
-<body>
-<!-- header -->
-  <div>
-    <div>
-      $logo
+<body class="singlePage">
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-sm navbar-light p-4 px-2">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="assets/logo.png" alt="logo">
+      </a>
+      <div class="collapse navbar-collapse ps-5" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="transactions.html">Transactions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="team.html">Team</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <span class="navbar-text pe-2">$Username</span>
+        <div class="d-inline-block dropdown">
+          <a class="dropdown-toggle gray" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24.8" height="25.26" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <a class="dropdown-item" href="logout.html">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </div>
-    <nav>
-      <a href="index.html">Dashboard</a>
-      <a href="transactions.html">Transactions</a>
-      <a href="team.html">Team</a>
-    </nav>
-    <div>
-      <span>$Username</span>
-      <span>$profile picture</span>
-      <span><a href="login.html">Logout</a></span>
+  </nav>
+  <!-- backdrop -->
+  <svg class="backdrop" height="100vh" width="100vw">
+    <circle cx="10%" cy="50%" r="25%" fill="#EA9A8E" />
+    <circle cx="48%" cy="80%" r="30%" fill="#847BE4" />
+    <circle cx="80%" cy="10%" r="27%" fill="#FBBBB1" />
+    <circle cx="65%" cy="40%" r="15%" fill="#5145D0" />
+  </svg>
+  <!-- main content -->
+  <div class="pop-up col-6 p-4 ">
+    <div class="d-flex mb-5 align-items-center align-self-baseline">
+      <div>
+        <a href="transactions.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+          </svg>
+        </a>
+      </div>
+      <h2 class="d-inline pt-2 ps-3 pb-0 h3">Edit Transaction</h2>
     </div>
+    <form action="index.html" class="w-100">
+      <div class="container ms-4">
+        <div class="row-cols-2 mb-3">
+          <label class="col-3 form-label" for="tr_title">Name</label>
+          <input class="col-6 form-control" type="text" name="title" id="tr_title" placeholder="$tr_name">
+        </div>
+        <div class="row-cols-2 mb-3">
+          <label class="col-3 form-label" for="tr_category">Category</label>
+          <select class="col-6 form-select " name="category" id="tr_category">
+            <option value="1">Income</option>
+            <option value="2">Groceries</option>
+            <option value="3">Housing</option>
+            <option value="4">Entertainment</option>
+            <option value="5">Life style</option>
+          </select>
+        </div>
+        <div class="row-cols-2 mb-3">
+          <label class="col-3 form-label" for="tr_date">Date</label>
+          <input class="col-6 form-control" type="text" name="date" id="tr_date" placeholder="$tr_date">
+        </div>
+        <div class="row-cols-2 mb-3">
+          <label class="col-3 form-label" for="tr_value">Value</label>
+          <input class="col-6 form-control" type="text" name="value" id="tr_value" placeholder="$tr_value">
+          <span class="ps-3">Ft</span>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between mx-4" style="margin-top: 5rem">
+        <a class="link-danger" href="transactions.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+          </svg>
+          Delete
+        </a>
+        <div>
+          <a href="transactions.html">Cancel</a>
+          <button class="btn btn-secondary ms-5" type="submit">Save Changes</button>
+        </div>
+      </div>
+    </form>
   </div>
-<!-- pop-up window -->
-  <div>
-    <div>
-      <a href="transactions.html">$icon_back</a>
-      <h2>Add Transaction</h2>
-    </div>
-    <div>
-      <form action="transactions.html">
-        <div>
-          <label for="tr_title">Name</label>
-          <input type="text" name="title" id="tr_title" placeholder="$tr_name">
-        </div>
-        <div>
-          <label for="tr_category">Category</label>
-          <input type="text" name="category" id="tr_category" placeholder="$tr_category">
-        </div>
-        <div>
-          <label for="tr_date">Date</label>
-          <input type="text" name="date" id="tr_date" placeholder="$tr_date">
-        </div>
-        <div>
-          <label for="tr_value">Value</label>
-          <input type="text" name="value" id="tr_value" placeholder="$tr_value">
-          <span>Ft</span>
-        </div>
-        <a href="transactions.html"><span>$icon_trash</span> Delete</a>
-        <a href="transactions.html">Cancel</a>
-        <button type="submit">Save</button>
-      </form>
-    </div>
-  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>

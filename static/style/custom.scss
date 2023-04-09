@@ -1,0 +1,133 @@
+$primary: #FA8A6B;
+$secondary: #544AC3;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+$gray-dark: #5D5D68;
+$gray: #6A6B73;
+$green: #2FE6C8;
+
+body {
+  color: $gray;
+}
+
+a {
+  color: $gray;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $secondary;
+}
+
+h2 {
+  color: $gray-dark;
+  padding-bottom: 1rem;
+}
+
+.nav-link.active {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.main {
+  padding: 8rem 8rem 0;
+
+  .datacard {
+    width: 18rem;
+    height: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+    margin: 0 1rem 1rem 0;
+    padding: 1.5rem;
+  }
+
+  .datarow {
+    border-bottom: 1px solid #EBEBEB;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #F5F8FF;
+  z-index: -1;
+  padding: 8rem 0;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    width: 349px;
+    padding: 0;
+  }
+}
+
+.members .datarow{
+  border-style: solid;
+  border-color: #EBEBEB;
+  border-width: 1px;
+
+  svg {
+    color: $primary;
+  }
+
+  .balance {
+    color: $secondary;
+  }
+}
+
+.floating {
+  border: none;
+  border-radius: 12px;
+  background-color: white;
+  filter: drop-shadow(0px 108.006px 86.4048px rgba(41, 72, 152, 0.05)) drop-shadow(0px 70.0039px 50.6028px rgba(41, 72, 152, 0.037963)) drop-shadow(0px 41.6023px 27.5215px rgba(41, 72, 152, 0.0303704)) drop-shadow(0px 21.6012px 14.0408px rgba(41, 72, 152, 0.025)) drop-shadow(0px 8.80049px 7.04039px rgba(41, 72, 152, 0.0196296)) drop-shadow(0px 2.00011px 3.40019px rgba(41, 72, 152, 0.012037));
+}
+
+.datarow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.singlePage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .backdrop {
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .pop-up {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+}
+
+.form-control, .form-select {
+  display: inline-block;
+  width: unset;
+  border-color: transparent;
+  padding: .8em 1.5em;
+  color: $gray;
+}
+
+.form-control:focus, .form-select:focus{
+  border-color: $secondary;
+  box-shadow: 0 0 0 0.25rem rgba(84, 74, 195, 0.25);
+}
