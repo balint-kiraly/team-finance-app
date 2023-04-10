@@ -1,17 +1,26 @@
-GET /               -login
-POST /          
-GET /signup         -register
-GET /forgotpw       -forgot pw
-GET /logout         -logout
-****
-GET /dashboard      -dashboard
-GET /transactions   -transactions
-GET /team           -team
-****
-Get /transaction/edit/:id   -edit transaction
-POST /transaction/edit/:id
+GET /dashboard              -dashboard
+GET /login                  -login
+POST /login
 
-Get /transaction/new        -new transaction
+GET /register               -register
+POST /register
+
+GET /forgotpw               -forgot pw
+POST /forgotpw
+
+GET /logout                 -logout
+****
+GET /team                   -team
+
+POST /team/add
+POST /team/del/:userid
+****
+GET /transactions           -transactions
+
+GET /transaction/new        -new transaction
 POST /transaction/new
 
-GET /transaction/delete/:id -delete transaction
+GET /transaction/edit/:id   -edit transaction
+POST /transaction/edit/:id
+
+GET /transaction/del/:id -delete transaction
