@@ -17,7 +17,7 @@ module.exports = function (app) {
     app.use('/transactions/new',
         authMW(objectRepository),
         updateTransMW(objectRepository),
-        renderMW(objectRepository, 'transaction_edit')
+        renderMW(objectRepository, 'transaction_new')
     );
 
     app.use('/transactions/edit/:id ',

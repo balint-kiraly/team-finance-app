@@ -12,10 +12,6 @@ const logoutMW = require('../middleware/logout');
 module.exports = function (app) {
     const objectRepository = {};
 
-    app.get('/',
-        entryRedirectMW(objectRepository)
-    );
-
     app.get('/dashboard',
         authMW(objectRepository),
         getRecentTransListMW(objectRepository),
@@ -47,5 +43,9 @@ module.exports = function (app) {
         function (req, res, next) {
             return res.redirect('/login')
         }
+    );
+
+    app.get('/',
+        entryRedirectMW(objectRepository)
     );
 };

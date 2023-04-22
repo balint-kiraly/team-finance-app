@@ -1,0 +1,51 @@
+<%- include('sp_header') -%>
+<%- include('backdrop') -%>
+  <!-- main content -->
+  <div class="pop-up col-6 p-4 ">
+    <div class="d-flex mb-5 align-items-center align-self-baseline">
+      <div>
+        <a href="../static/transactions.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+          </svg>
+        </a>
+      </div>
+      <h2 class="d-inline pt-2 ps-3 pb-0 h3">Add Transaction</h2>
+    </div>
+    <form action="../static/index.html" class="w-100">
+      <div class="container ms-4">
+        <div class="row-cols-2 mb-3">
+          <label class="col-3 form-label" for="tr_title">Name</label>
+          <input class="col-6 form-control" type="text" name="title" id="tr_title">
+        </div>
+        <div class="row-cols-2 mb-3">
+          <label class="col-3 form-label" for="tr_category">Category</label>
+          <select class="col-6 form-select " name="category" id="tr_category">
+            <option value="1">Income</option>
+            <option value="2">Groceries</option>
+            <option value="3">Housing</option>
+            <option value="4">Entertainment</option>
+            <option value="5">Life style</option>
+          </select>
+        </div>
+        <div class="row-cols-2 mb-3">
+          <label class="col-3 form-label" for="tr_date">Date</label>
+          <input class="col-6 form-control" type="text" name="date" id="tr_date">
+        </div>
+        <div class="row-cols-2 mb-3">
+          <label class="col-3 form-label" for="tr_value">Value</label>
+          <input class="col-6 form-control" type="text" name="value" id="tr_value">
+          <span class="ps-3">Ft</span>
+        </div>
+      </div>
+      <div class="d-flex justify-content-end mx-4" style="margin-top: 5rem">
+        <div>
+          <a href="../static/transactions.html">Cancel</a>
+          <button class="btn btn-secondary ms-5" type="submit">Save Changes</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>

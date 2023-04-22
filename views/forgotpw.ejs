@@ -1,0 +1,18 @@
+<%- include('sp_header') -%>
+<%- include('backdrop') -%>
+<!-- main content -->
+<div class="pop-up col-6 col-lg-5 p-4">
+    <h2 class="mt-5">Forgot Password</h2>
+    <form action="../static/index.html" class="w-50">
+        <div class="form-floating mb-3">
+            <input class="form-control w-100" type="email" name="email" id="email" placeholder="Enter email address" required>
+            <label class="form-label" for="email">Email</label>
+        </div>
+        <button class="btn btn-primary text-white w-100 mt-5 shadow-sm" type="submit">Send my Password</button>
+    </form>
+    <div class="text-center mt-3 mb-2">
+        <div>Or go back to <a class="link-secondary" href="/login">Login</a></div>
+    </div>
+</div>
+</body>
+</html>
