@@ -30,8 +30,17 @@ h2 {
   text-underline-offset: 5px;
 }
 
-.main {
+/*dashboard*/
+main {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  gap: 2rem;
+  min-height: 100vh;
+}
+
+.main-content {
   padding: 8rem 8rem 0;
+  flex-grow: 999;
 
   .datacard {
     width: 18rem;
@@ -49,20 +58,22 @@ h2 {
   }
 }
 
-.sidebar {
-  position: fixed;
-  top: 0;
-  right: 0;
+aside {
   background-color: #F5F8FF;
-  z-index: -1;
-  padding: 8rem 0;
+  flex-grow: 1;
+  padding: 0 3rem;
 
-  .container {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 3rem;
-    width: 349px;
-    padding: 0;
+  .sidebar {
+    position: sticky;
+    top: 8rem;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 3rem;
+      width: 349px;
+      padding: 0;
+    }
   }
 }
 
@@ -94,6 +105,7 @@ h2 {
   padding: 1rem;
 }
 
+/*single page*/
 .singlePage {
   width: 100vw;
   height: 100vh;

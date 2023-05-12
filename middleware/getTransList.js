@@ -5,6 +5,13 @@
  */
 module.exports = function (objectRepository) {
     return function (req, res, next) {
-        return next();
+        objectRepository['transModel'].find({}, (err, transactions) => {
+            if (err) {
+                return next(err);
+            }
+            //TODO:team filter
+            res.locals.transList = transactions;
+            return next();
+        });
     };
 };

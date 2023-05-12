@@ -5,6 +5,16 @@
  */
 module.exports = function (objectRepository) {
     return function (req, res, next) {
+
+        res.locals.teamList = [
+            {
+                _id: "$id",
+                name: "$name",
+                email: "$email",
+                password: "$password"
+            }
+        ];
+
         return next();
     };
 };

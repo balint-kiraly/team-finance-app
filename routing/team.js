@@ -4,8 +4,14 @@ const renderMW = require('..//middleware/render');
 const checkNewMemberMW = require('../middleware/checkNewMember');
 const delTeamMemberMW = require('../middleware/delTeamMember');
 
+const userModel = require('../models/user');
+const transModel = require('../models/transaction');
+
 module.exports = function (app) {
-    const objectRepository = {};
+    const objectRepository = {
+        userModel,
+        transModel
+    };
 
     app.get('/team',
         authMW(objectRepository),

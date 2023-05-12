@@ -7,6 +7,7 @@
  */
 module.exports = function (objectRepository) {
     return function (req, res, next) {
-
+        //TODO: session check implementation
+        return res.redirect('/dashboard');
     };
 };

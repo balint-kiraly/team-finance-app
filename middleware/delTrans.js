@@ -5,6 +5,16 @@
  */
 module.exports = function (objectRepository) {
     return function (req, res, next) {
-        return next();
+        if (typeof res.locals.transaction === 'undefined') {
+
+            return next();
+        }
+        res.locals.transaction.remove((err) => {
+            if (err) {
+                return next(err);
+            }
+
+            return res.redirect('/transactions');
+        })
     };
 };

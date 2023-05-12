@@ -5,6 +5,13 @@
  */
 module.exports = function (objectRepository) {
     return function (req, res, next) {
-        return next();
+        objectRepository['transModel'].findOne({_id: req.params.id}, (err, transaction) => {
+            if (err || !transaction) {
+                return next(err);
+            }
+
+            res.locals.transaction = transaction;
+            return next();
+        });
     };
 };

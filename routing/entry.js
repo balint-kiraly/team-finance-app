@@ -1,6 +1,6 @@
 const entryRedirectMW = require('../middleware/entryRedirect');
 const authMW = require('../middleware/auth');
-const getRecentTransListMW = require('../middleware/getRecentTransList');
+const getTransListMW = require('../middleware/getTransList');
 const getTeamListMW = require('../middleware/getTeamList');
 const renderMW = require('..//middleware/render');
 const inverseAuthMW = require('../middleware/inverseAuth');
@@ -9,12 +9,18 @@ const checkForgotPwMW = require('../middleware/checkForgotPw');
 const checkRegisterMW = require('../middleware/checkRegister');
 const logoutMW = require('../middleware/logout');
 
+const userModel = require('../models/user');
+const transModel = require('../models/transaction');
+
 module.exports = function (app) {
-    const objectRepository = {};
+    const objectRepository = {
+        userModel,
+        transModel
+    };
 
     app.get('/dashboard',
         authMW(objectRepository),
-        getRecentTransListMW(objectRepository),
+        getTransListMW(objectRepository),
         getTeamListMW(objectRepository),
         renderMW(objectRepository, 'dashboard')
     );

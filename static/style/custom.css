@@ -10792,10 +10792,19 @@ h2, .h2 {
   text-underline-offset: 5px;
 }
 
-.main {
-  padding: 8rem 8rem 0;
+/*dashboard*/
+main {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  gap: 2rem;
+  min-height: 100vh;
 }
-.main .datacard {
+
+.main-content {
+  padding: 8rem 8rem 0;
+  flex-grow: 999;
+}
+.main-content .datacard {
   width: 18rem;
   height: 7rem;
   display: flex;
@@ -10805,19 +10814,20 @@ h2, .h2 {
   margin: 0 1rem 1rem 0;
   padding: 1.5rem;
 }
-.main .datarow {
+.main-content .datarow {
   border-bottom: 1px solid #EBEBEB;
 }
 
-.sidebar {
-  position: fixed;
-  top: 0;
-  right: 0;
+aside {
   background-color: #F5F8FF;
-  z-index: -1;
-  padding: 8rem 0;
+  flex-grow: 1;
+  padding: 0 3rem;
 }
-.sidebar .container {
+aside .sidebar {
+  position: sticky;
+  top: 8rem;
+}
+aside .sidebar .container {
   display: flex;
   flex-direction: column;
   margin-bottom: 3rem;
@@ -10851,6 +10861,7 @@ h2, .h2 {
   padding: 1rem;
 }
 
+/*single page*/
 .singlePage {
   width: 100vw;
   height: 100vh;

@@ -2,11 +2,17 @@ const authMW = require('../middleware/auth');
 const renderMW = require('..//middleware/render');
 const getTransListMW = require('../middleware/getTransList');
 const getTransMW = require('../middleware/getTrans');
-const updateTransMW = require('../middleware/updateTrans');
+const saveTransMW = require('../middleware/saveTrans');
 const delTransMW = require('../middleware/delTrans');
 
+const userModel = require('../models/user');
+const transModel = require('../models/transaction');
+
 module.exports = function (app) {
-    const objectRepository = {};
+    const objectRepository = {
+        userModel,
+        transModel
+    };
 
     app.get('/transactions',
         authMW(objectRepository),
@@ -16,18 +22,18 @@ module.exports = function (app) {
 
     app.use('/transactions/new',
         authMW(objectRepository),
-        updateTransMW(objectRepository),
-        renderMW(objectRepository, 'transaction_new')
+        saveTransMW(objectRepository),
+        renderMW(objectRepository, 'transactionform')
     );
 
-    app.use('/transactions/edit/:id ',
+    app.use('/transactions/edit/:id',
         authMW(objectRepository),
         getTransMW(objectRepository),
-        updateTransMW(objectRepository),
-        renderMW(objectRepository, 'transaction_edit')
+        saveTransMW(objectRepository),
+        renderMW(objectRepository, 'transactionform')
     );
 
-    app.get('/transactions/del/:id ',
+    app.get('/transactions/del/:id',
         authMW(objectRepository),
         getTransMW(objectRepository),
         delTransMW(objectRepository),
