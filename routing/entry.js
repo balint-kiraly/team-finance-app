@@ -6,7 +6,7 @@ const renderMW = require('..//middleware/render');
 const inverseAuthMW = require('../middleware/inverseAuth');
 const checkLoginMW = require('../middleware/checkLogin');
 const checkForgotPwMW = require('../middleware/checkForgotPw');
-const checkRegisterMW = require('../middleware/checkRegister');
+const checkRegisterMW = require('../middleware/checkRegistration');
 const logoutMW = require('../middleware/logout');
 
 const userModel = require('../models/user');
@@ -40,7 +40,7 @@ module.exports = function (app) {
     app.use('/register',
         inverseAuthMW(objectRepository),
         checkRegisterMW(objectRepository),
-        renderMW(objectRepository, 'register')
+        renderMW(objectRepository, 'registration')
     );
 
     app.get('/logout',

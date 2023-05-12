@@ -7,7 +7,10 @@
  */
 module.exports = function (objectRepository) {
     return function (req, res, next) {
-        //TODO: session check implementation
-        return res.redirect('/dashboard');
+        if (typeof req.session.userid === 'undefined') {
+            return res.redirect('/login');
+        } else {
+            return res.redirect('/dashboard');
+        }
     };
 };
