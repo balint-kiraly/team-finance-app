@@ -6,7 +6,7 @@
 module.exports = function (objectRepository) {
     return function (req, res, next) {
         objectRepository['transModel'].findOne({_id: req.params.id}, (err, transaction) => {
-            if (err || !transaction) {
+            if (err || !transaction || transaction._userid.toString() !== req.session.userid) {
                 return next(err);
             }
 

@@ -1,33 +1,43 @@
-const authMW = require('../middleware/auth');
-const getTeamListMW = require('../middleware/getTeamList');
-const renderMW = require('..//middleware/render');
-const checkNewMemberMW = require('../middleware/checkNewMember');
-const delTeamMemberMW = require('../middleware/delTeamMember');
+const authMW = require('../middleware/auth/auth');
+const getUserMW = require('../middleware/getUser');
+const getMemberMW = require('../middleware/team/getMember');
+const getTeamListMW = require('../middleware/team/getTeamList');
+const renderMW = require('../middleware/render');
+const checkNewMemberMW = require('../middleware/team/checkNewMember');
+const delTeamMemberMW = require('../middleware/team/delTeamMember');
 
 const userModel = require('../models/user');
 const transModel = require('../models/transaction');
+const teamModel = require('../models/team');
 
 module.exports = function (app) {
     const objectRepository = {
         userModel,
-        transModel
+        transModel,
+        teamModel
     };
 
     app.get('/team',
         authMW(objectRepository),
+        getUserMW(objectRepository),
         getTeamListMW(objectRepository),
         renderMW(objectRepository, 'team')
     );
 
     app.post('/team/add',
         authMW(objectRepository),
+        getUserMW(objectRepository),
+        getTeamListMW(objectRepository),
         checkNewMemberMW(objectRepository),
         renderMW(objectRepository, 'team')
     );
 
-    app.post('/team/del/:userid',
+    app.get('/team/del/:userid',
         authMW(objectRepository),
+        getMemberMW(objectRepository),
         delTeamMemberMW(objectRepository),
-        renderMW(objectRepository, 'team')
+        function (req, res, next) {
+            return res.redirect('/team');
+        }
     );
 };

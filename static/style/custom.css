@@ -10835,6 +10835,7 @@ aside .sidebar .container {
   padding: 0;
 }
 
+/*team*/
 .members .datarow {
   border-style: solid;
   border-color: #EBEBEB;
@@ -10859,6 +10860,8 @@ aside .sidebar .container {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  min-width: 300px;
+  max-width: 500px;
 }
 
 /*single page*/

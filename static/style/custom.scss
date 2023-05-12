@@ -77,7 +77,8 @@ aside {
   }
 }
 
-.members .datarow{
+/*team*/
+.members .datarow {
   border-style: solid;
   border-color: #EBEBEB;
   border-width: 1px;
@@ -103,6 +104,8 @@ aside {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  min-width: 300px;
+  max-width: 500px;
 }
 
 /*single page*/
@@ -139,7 +142,7 @@ aside {
   color: $gray;
 }
 
-.form-control:focus, .form-select:focus{
+.form-control:focus, .form-select:focus {
   border-color: $secondary;
   box-shadow: 0 0 0 0.25rem rgba(84, 74, 195, 0.25);
 }
