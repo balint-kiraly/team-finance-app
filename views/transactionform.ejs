@@ -18,12 +18,12 @@
         <div class="container ms-4">
             <div class="row-cols-2 mb-3">
                 <label class="col-3 form-label" for="tr_name">Name</label>
-                <input class="col-6 form-control" type="text" name="name" id="tr_name"
+                <input class="col-6 form-control" type="text" name="name" id="tr_name" required
                        value="<%= (typeof transaction === 'undefined') ? '' : transaction.name %>">
             </div>
             <div class="row-cols-2 mb-3">
                 <label class="col-3 form-label" for="tr_category">Category</label>
-                <select class="col-6 form-select " name="category" id="tr_category">
+                <select class="col-6 form-select " name="category" id="tr_category" required>
                     <option value="Income"
                     <% if (typeof transaction !== 'undefined' && transaction.category === 'Income' ) { %> selected
                             <% } %>
@@ -54,12 +54,12 @@
             </div>
             <div class="row-cols-2 mb-3">
                 <label class="col-3 form-label" for="tr_date">Date</label>
-                <input class="col-6 form-control" type="text" name="date" id="tr_date"
-                       value="<%= (typeof transaction === 'undefined') ? '' : transaction.date %>">
+                <input class="col-6 form-control" type="text" name="date" id="tr_date" required
+                       value="<%= (typeof transaction === 'undefined') ? '' : transaction.formattedDate %>">
             </div>
             <div class="row-cols-2 mb-3">
                 <label class="col-3 form-label" for="tr_value">Value</label>
-                <input class="col-6 form-control" type="text" name="value" id="tr_value"
+                <input class="col-6 form-control" type="text" name="value" id="tr_value" required
                        value="<%= (typeof transaction === 'undefined') ? '' : transaction.value %>">
                 <span class="ps-3">Ft</span>
             </div>

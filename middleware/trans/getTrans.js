@@ -11,6 +11,13 @@ module.exports = function (objectRepository) {
             }
 
             res.locals.transaction = transaction;
+
+            //date formatting
+            if (transaction.date !== null) {
+                const options = {day: "numeric", month: "numeric", year: "numeric"};
+                res.locals.transaction.formattedDate = res.locals.transaction.date.toLocaleDateString("en-US", options);
+            }
+
             return next();
         });
     };

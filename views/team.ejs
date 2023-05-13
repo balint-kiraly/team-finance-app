@@ -6,10 +6,10 @@
         <!-- main content -->
         <div class="col-lg-6 main-content">
             <h2>Members</h2>
-            <div class="container-fluid members">
+            <div class="container-fluid">
                 <% team.forEach(function (member) { %>
                     <div class="row pb-2 flex-row flex-nowrap">
-                        <div class="col-10 floating datarow">
+                        <div class="col-10 floating team datarow">
                             <span>
                               <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor"
                                    class="bi bi-person-fill" viewBox="0 0 16 16">
@@ -34,7 +34,8 @@
             <div class="container-fluid">
                 <form action="/team/add" method="post">
                     <div class="row flex-row flex-nowrap">
-                        <div class="input-group col-10 floating datarow" style="width: auto; flex-grow: 1; padding: 0">
+                        <div class="input-group col-10 floating team datarow"
+                             style="width: auto; flex-grow: 1; padding: 0">
                             <input class="form-control" style="padding: 1rem" type="email" name="email" id="email"
                                    placeholder="Add new member (Email)"/>
                             <button type="submit" class="btn py-1 px-3 rounded-5 d-flex align-items-center">
@@ -49,7 +50,7 @@
                         <div class="col-2 d-flex align-items-center ps-3"><%= team.length %>/5</div>
                     </div>
                 </form>
-                <span class="text-danger w-100 text-center" style="display: inline-block; font-size: 14px">
+                <span class="text-danger w-100" style="display: inline-block; font-size: 14px">
                     <%= (typeof error === 'undefined') ? '' : error; %>
                 </span>
             </div>

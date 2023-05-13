@@ -2,16 +2,19 @@
     <div class="sidebar d-flex align-items-center flex-column">
         <div class="container">
             <h2>Your Account</h2>
-            <div>
+            <div id="balance_card">
                 <img src="/assets/card.png" alt="card">
-                <h3><%= user.balance %></h3>
+                <div>
+                    <h4>Balance:</h4>
+                    <h4 class="value"><%= user.balance %> Ft</h4>
+                </div>
             </div>
         </div>
         <div class="container">
             <h2>Other People</h2>
             <div class="container members gap-2">
                 <% team.forEach(function (member) { if (member._id.toString() !== user._id.toString()) { %>
-                    <div class="floating datarow">
+                    <div class="floating team datarow">
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor"
                                          class="bi bi-person-fill" viewBox="0 0 16 16">

@@ -10,10 +10,10 @@
 module.exports = function (objectRepository) {
     return function (req, res, next) {
         //not enough parameters
-        if (typeof req.body.name === 'undefined' ||
-            typeof req.body.category === 'undefined' ||
-            typeof req.body.date === 'undefined' ||
-            typeof req.body.value === 'undefined') {
+        if (typeof req.body.name === 'undefined' || req.body.name === '' ||
+            typeof req.body.category === 'undefined' || req.body.category === '' ||
+            typeof req.body.date === 'undefined' || req.body.date === '' ||
+            typeof req.body.value === 'undefined' || req.body.value === '') {
 
             return next();
         }
@@ -21,9 +21,15 @@ module.exports = function (objectRepository) {
         //new transaction
         if (typeof res.locals.transaction === 'undefined') {
             res.locals.transaction = new objectRepository['transModel']();
-        }
 
-        //TODO:(empty strings?), input handling
+        } else {
+            //subtract the previous value
+            if (res.locals.transaction.category === 'Income') {
+                res.locals.user.balance -= res.locals.transaction.value;
+            } else {
+                res.locals.user.balance += res.locals.transaction.value;
+            }
+        }
 
         res.locals.transaction.name = req.body.name;
         res.locals.transaction.category = req.body.category;

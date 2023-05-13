@@ -2,6 +2,7 @@ $primary: #FA8A6B;
 $secondary: #544AC3;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Tomorrow:wght@600&display=swap');
 
 $gray-dark: #5D5D68;
 $gray: #6A6B73;
@@ -34,13 +35,12 @@ h2 {
 main {
   display: flex;
   flex-wrap: wrap-reverse;
-  gap: 2rem;
-  min-height: 100vh;
+  min-height: 110vh;
 }
 
 .main-content {
-  padding: 8rem 8rem 0;
-  flex-grow: 999;
+  padding: 8rem 5vw;
+  flex-grow: 2;
 
   .datacard {
     width: 18rem;
@@ -77,11 +77,48 @@ aside {
   }
 }
 
+#balance_card {
+  position: relative;
+
+  div {
+    position: absolute;
+    left: 18px;
+    top: 80px;
+    font-family: 'Tomorrow', sans-serif;
+  }
+
+  h4 {
+    margin: 0;
+    color: $secondary;
+  }
+
+  .value {
+    color: white;
+  }
+}
+
+/*transaction*/
+.datarow.grid-container {
+  display: grid;
+  grid-template-columns: 100px 2fr 1fr 1fr;
+}
+
+.translink:hover .datarow {
+  background-color: #F5F8FF;
+  border-radius: 10px;
+}
+
+.translink:hover .nohover {
+  color: $gray;
+}
+
 /*team*/
-.members .datarow {
+.team.datarow {
   border-style: solid;
   border-color: #EBEBEB;
   border-width: 1px;
+  min-width: 300px;
+  max-width: 500px;
 
   svg {
     color: $primary;
@@ -104,8 +141,6 @@ aside {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  min-width: 300px;
-  max-width: 500px;
 }
 
 /*single page*/
