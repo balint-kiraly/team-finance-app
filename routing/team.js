@@ -1,10 +1,10 @@
-const authMW = require('../middleware/auth/auth');
-const getUserMW = require('../middleware/getUser');
-const getMemberMW = require('../middleware/team/getMember');
-const getTeamListMW = require('../middleware/team/getTeamList');
-const renderMW = require('../middleware/render');
-const checkNewMemberMW = require('../middleware/team/checkNewMember');
-const delTeamMemberMW = require('../middleware/team/delTeamMember');
+const authMW = require('../middlewares/auth/auth');
+const getUserMW = require('../middlewares/getUser');
+const getMemberMW = require('../middlewares/team/getMember');
+const getTeamListMW = require('../middlewares/team/getTeamList');
+const renderMW = require('../middlewares/render');
+const checkNewMemberMW = require('../middlewares/team/checkNewMember');
+const delTeamMemberMW = require('../middlewares/team/delTeamMember');
 
 const userModel = require('../models/user');
 const transModel = require('../models/transaction');
