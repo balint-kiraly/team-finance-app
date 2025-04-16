@@ -1,17 +1,28 @@
-# team-finance-app
+# Team Finance App
 
-Install Dependencies
+A **concept web application** for tracking team expenses, built with **Express.js**.
 
-`npm install`
+> [!Note]
+> This project was developed as part of the Server-side Javascript course at BME.
+> 
+> Author: Bálint Király
 
------
+---
 
-Run Application
+📄 Screens available in [`UI.pdf`](UI.pdf)
 
-`npm run dev`
+---
 
------
+## 🚀 Getting Started
 
-Close Application
+### 📦 Install Dependencies
 
-`^C`
+```bash
+npm install
+```
+
+### ▶️ Run Application
+
+```bash
+npm run dev
+```
